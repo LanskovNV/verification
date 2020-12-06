@@ -1,0 +1,32 @@
+#define crash_1 (traffic_lights_color[0] == GREEN && traffic_lights_color[1] == GREEN)
+#define crash_2 (traffic_lights_color[0] == GREEN && traffic_lights_color[2] == GREEN)
+#define crash_3 (traffic_lights_color[2] == GREEN && traffic_lights_color[3] == GREEN)
+
+#define car_sense_0 (len(car_sensor[0]) > 0)
+#define car_sense_1 (len(car_sensor[1]) > 0)
+#define car_sense_2 (len(car_sensor[2]) > 0)
+#define car_sense_3 (len(car_sensor[3]) > 0)
+
+#define tl_green_0 (traffic_lights_color[0] == GREEN)
+#define tl_green_1 (traffic_lights_color[1] == GREEN)
+#define tl_green_2 (traffic_lights_color[2] == GREEN)
+#define tl_green_3 (traffic_lights_color[3] == GREEN)
+
+/* LTL formulae descriptions */
+
+/* Safety */
+[] (!crash_1)
+[] (!crash_2)
+[] (!crash_3)
+
+/* Liveliness */
+ [] (car_sense_0 -> <> tl_green_0)
+ [] (car_sense_1 -> <> tl_green_1)
+ [] (car_sense_2 -> <> tl_green_2)
+ [] (car_sense_3 -> <> tl_green_3)
+
+/* Fairness */
+[] <> !(tl_green_0 && car_sense_0)
+[] <> !(tl_green_1 && car_sense_1)
+[] <> !(tl_green_2 && car_sense_2)
+[] <> !(tl_green_3 && car_sense_3)
