@@ -134,3 +134,34 @@ init {
         od;
     }
 }
+
+/* ltl formulae comment for spin version less than 6 */
+
+#define crash_1 (traffic_lights_color[0] == GREEN && traffic_lights_color[1] == GREEN)
+#define crash_2 (traffic_lights_color[0] == GREEN && traffic_lights_color[2] == GREEN)
+#define crash_3 (traffic_lights_color[2] == GREEN && traffic_lights_color[3] == GREEN)
+
+#define car_sense_0 (len(car_sensor[0]) > 0)
+#define car_sense_1 (len(car_sensor[1]) > 0)
+#define car_sense_2 (len(car_sensor[2]) > 0)
+#define car_sense_3 (len(car_sensor[3]) > 0)
+
+#define tl_green_0 (traffic_lights_color[0] == GREEN)
+#define tl_green_1 (traffic_lights_color[1] == GREEN)
+#define tl_green_2 (traffic_lights_color[2] == GREEN)
+#define tl_green_3 (traffic_lights_color[3] == GREEN)
+/*
+ltl safety1 { [] (!crash_1) }
+ltl safety2 { [] (!crash_2) }
+ltl safety3 { [] (!crash_3) }
+
+ltl liveness1 { [] (car_sense_0 -> <> tl_green_0) }
+ltl liveness2 { [] (car_sense_1 -> <> tl_green_1) }
+ltl liveness3 { [] (car_sense_2 -> <> tl_green_2) }
+ltl liveness4 { [] (car_sense_3 -> <> tl_green_3) }
+
+ltl fairness1 { [] <> !(tl_green_0 && car_sense_0) }
+ltl fairness2 { [] <> !(tl_green_1 && car_sense_1) }
+ltl fairness3 { [] <> !(tl_green_2 && car_sense_2) }
+ltl fairness4 { [] <> !(tl_green_3 && car_sense_3) }
+ */
