@@ -1,7 +1,7 @@
 spin_windows
 docs
-src/traffic_light/*
-!src/traffic_light/model.pml
-!src/traffic_light/formulae.ltl
+src/*
+!src/model.pml
+!src/formulae.ltl
 **/build/*
 !**/build/LanskovNV_report.pdf
