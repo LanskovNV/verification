@@ -1,7 +1,7 @@
 spin_windows
 docs
-src/*
-!src/model.pml
-!src/formulae.ltl
+**/src/*
+!**/src/model.pml
+!**/src/formulae.ltl
 **/build/*
 !**/build/LanskovNV_report.pdf
