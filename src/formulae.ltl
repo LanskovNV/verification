@@ -1,12 +1,6 @@
-#define crash_1 \
-	(traffic_lights_color[0] == GREEN && \
-	 traffic_lights_color[1] == GREEN)
-#define crash_2 \ 
-	(traffic_lights_color[0] == GREEN && \
-	 traffic_lights_color[2] == GREEN)
-#define crash_3 \
-	(traffic_lights_color[2] == GREEN && \
-	 traffic_lights_color[3] == GREEN)
+#define crash_1 (traffic_lights_color[0] == GREEN && traffic_lights_color[1] == GREEN)
+#define crash_2 (traffic_lights_color[0] == GREEN && traffic_lights_color[2] == GREEN)
+#define crash_3 (traffic_lights_color[2] == GREEN && traffic_lights_color[3] == GREEN)
 
 #define car_sense_0 (len(car_sensor[0]) > 0)
 #define car_sense_1 (len(car_sensor[1]) > 0)
