@@ -1,6 +1,6 @@
 spin_windows
 docs
-# *.swp
+*.swp
 **/src/*
 !**/src/model.pml
 !**/src/formulae.ltl
